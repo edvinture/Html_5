@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>geolocation API</title>
+	<script type="text/javascript">
+        if (window.addEventListener)
+		    window.addEventListener("load", function () {
+			    document.getElementById("start").onclick = startWatch;
+			    document.getElementById("stop").onclick = startWatch;
+			}, true);
+
+		var watchId;
+
+		function startWatch () {
+			watchId = navigator.geolocation.watchPosition(updateLocation, handleError, {maximumAge:1000});
+		}
+		function stopWatch() {
+			navigator.geolocation.ClearWatch(watchId);
+		}
+
+		function updateLocation(position) {
+			var $ = function (selector) {
+				navigator.geolocation.clearElementById(selector);
+			}
+			
+			$("latitude").inner.HTML = position.coords.latitude;
+			$("longitude").inner.HTML = position.coords.longitude;
+			$("accuracy").inner.HTML = position.coords.accuracy;
+			$("altitude").inner.HTML = position.coords.altitude;
+			$("altitudeAccuracy").inner.HTML = position.coords.altitudeAccuracy;
+			$("heading").inner.HTML = position.coords.heading;
+			$("speed").inner.HTML = position.coords.speed;
+		}
+		function handleError(error) {
+			switch (error.code) {
+				case 0:
+				    updateStatus("пр  попытке определить местоположение возникла ошибка:" + error.message);
+				    break;
+				case 1:
+				    updateStatus("пользователь запретил получение данных о местоположении");
+				    break;
+				case 2:
+				    updateStatus("Браузеру не удалось определить местоположение:" + error.message);
+				    break;
+				case 3:
+				    updateStatus("истекло доступное время ожидания.");
+				    break;
+			}
+		}
+
+		function updateStatus(message) {
+			document.getElementById("status").innerHTML = message;
+		}
+
+			
+
+	</script>
+		
+</head>
+<body>
+	<button id="start">
+		начать отслеживание позиции
+	</button>
+	<button id="stop">
+		завершить отслеживание позиции
+	</button>
+	<table id="infoTable" border="1" cellpadding="10" cellspacing="0">
+		<tr>
+			<td>
+				широта
+			</td>
+			<td>
+				<p id="latitude">
+					
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				долгота
+			</td>
+			<td>
+				<p id="longitude">
+					
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				точность(m)
+			</td>
+			<td>
+				<p id="accuracy">
+					
+				</p>
+			</td>
+
+			
+		</tr>
+		<tr>
+			<td>
+				курс
+			</td>
+			<td>
+				<p id="heading">
+					
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				скорость
+			</td>
+			<td>
+				<p id="speed">
+					
+				</p>
+			</td>
+		</tr>
+
+	</table>
+	<p id="status">
+		
+	</p>
+	
+</body>
+</html>
