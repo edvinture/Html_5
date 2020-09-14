@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,4 +20,27 @@
 		}
 	</script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>audio element</title>
+	<script src="modernizr-2.0.6.js"></script>
+</head>
+<body>
+
+	<audio id="audio" controls autoplay src="audio/vivaldi.ogg" >браузер не поддерживает воспроизведение звуковых медиафайлов</audio>
+	<script>
+		if (!modernizr.audio)
+			alert("браузер не поддерживает воспроизведение звуковых медиафайлов")
+		else {
+			var audio = document.getElementsByTagId('audio');
+			var res = audio.canplaytype('audio/ogg; codecs="vorbis');
+			if (res) alert(res + "can play ogg vorbis")
+			else alert("no support for ogg vorbis")
+		}
+	</script>
+</body>
+>>>>>>> 8c3c2638232dc19cc7a8d7527e2bf1393a2992ba
 </html>

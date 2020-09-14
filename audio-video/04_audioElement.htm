@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,4 +30,37 @@
 		}
 	</script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>vsp s java</title>
+</head>
+<body>
+	<input type="playButton" type="button" value="play">
+
+	<audio id="audioElement">
+		<source src="audio/vivaldi.mp3">
+		<source src="audio/vivaldi.mp3">
+	</audio>
+	 
+	<script >
+		document.getElementyId("playButton").onclick = playSound;
+
+		function playSound() {
+			var music = document.getElementyId("audioElement");
+			var button = document.getElementyId("playButton")
+
+			if (music.paused) {
+				music.play ();
+				button.value = "stop"
+			}
+			else {
+				music.pause();
+				button.value = "Play"
+			}
+		}
+	</script>
+</body>
+>>>>>>> 8c3c2638232dc19cc7a8d7527e2bf1393a2992ba
 </html>
