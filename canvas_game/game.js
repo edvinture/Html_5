@@ -1,8 +1,10 @@
 const KEYS = {
     LEFT: 37,
-    RIGTH: 39,
+    RIGHT: 39,
     SPACE: 32
 };
+
+
 
 let game = {
     ctx: null,
@@ -11,11 +13,13 @@ let game = {
     blocks: [],
     rows: 4,
     cols: 8,
+    width: 640,
+    height: 360,
     sprites: {
         background: null,
         ball: null,
         platform: null,
-        block: null,
+        block: null
     },
     init: function() {
         this.ctx = document.getElementById("mycanvas").getContext("2d");
@@ -25,8 +29,8 @@ let game = {
         window.addEventListener("keydown", e => {
             if (e.keyCode === KEYS.SPACE) {
                 this.platform.fire();
-            } else if (e.keyCode === KEYS.LEFT || e.keyCode === KEYS.RIGTH) {
-                this.platform.start(e.keyCode);
+            } else if (e.keyCode === KEYS.LEFT || e.keyCode === KEYS.RIGHT) {
+                this.platform.start(e.keyCode);    
             }
         });
         window.addEventListener("keyup", e => {
@@ -46,7 +50,7 @@ let game = {
         for (let key in this.sprites) {
             this.sprites[key] = new Image();
             this.sprites[key].src = "img/" + key + ".png";
-            this.sprites[key].addEventListener("load",  onImageLoad);
+            this.sprites[key].addEventListener("load", onImageLoad);
         }
     },
     create() {
@@ -57,7 +61,7 @@ let game = {
                     y: 24 * row + 35
                 });
             }
-        }  
+        }
     },
     update() {
         this.platform.move();
@@ -71,6 +75,7 @@ let game = {
         });
     },
     render() {
+        this.ctx.clearRect(0,0, this.width, this.height);
         this.ctx.drawImage(this.sprites.background, 0, 0);
         this.ctx.drawImage(this.sprites.ball, 0, 0, this.ball.width, this.ball.height,
             this.ball.x, this.ball.y, this.ball.width, this.ball.height);
@@ -88,10 +93,14 @@ let game = {
             this.create();
             this.run();
         });
+    },
+    random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 };
 
 game.ball = {
+    dx: 0,
     dy: 0,
     velocity: 3,
     x: 320,
@@ -100,10 +109,14 @@ game.ball = {
     height: 20,
     start() {
         this.dy = -this.velocity;
+        this.dx = game.random(-this.velocity, this.velocity);
     },
     move() {
         if (this.dy) {
             this.y += this.dy;
+        }
+        if (this.dx) {
+            this.x += this.dx;
         }
     }
 };
@@ -123,23 +136,23 @@ game.platform = {
     start(direction) {
         if (direction === KEYS.LEFT) {
             this.dx = -this.velocity;
-        } else if (direction === KEYS.RIGTH) {
-            this.dx = this.velocity;
+        } else if (direction === KEYS.RIGHT) {
+            this.dx = this.velocity
         }
     },
-    stop() {
+    stop () {
         this.dx = 0;
     },
     move() {
         if (this.dx) {
             this.x += this.dx;
-            if (this.ball) {    
+            if (this.ball) {
                 this.ball.x += this.dx;
             }
         }
     }
 };
 
-window.addEventListener("load", () => {    
+window.addEventListener("load", () => {
     game.start();
 });
