@@ -45,6 +45,9 @@ let game = {
             if (loaded >= required) {
                 callback();
             }
+            if (loaded >= required) {
+                callback();
+            }
         };
 
         for (let key in this.sprites) {
@@ -66,6 +69,12 @@ let game = {
     update() {
         this.platform.move();
         this.ball.move();
+
+        for (let block of this.blocks) {
+            if ( this.ball.collide(block)) {
+
+            }
+        }
     },
     run() {
         window.requestAnimationFrame(() => {
@@ -118,6 +127,22 @@ game.ball = {
         if (this.dx) {
             this.x += this.dx;
         }
+    },
+    collide(element) {
+        let x = this.x  + this.dx;
+        let y = this.y + this.dy;
+
+        if (x + this.width > element.x &&
+            x < element.x + element.width &&
+            y + this.height > element.y &&
+            y < element.y + element.height) {
+                return true;
+            }
+        return false;
+    },
+    
+    bumpBlock(block) {
+        this.dy *= -1;
     }
 };
 
