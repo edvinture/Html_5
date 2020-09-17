@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>уведомления об обновлениях Web Storage</title>
+	<script type="text/javascript">
+		window.addEventListener("storage", displayEvent, true);
+		window.addEventListener("load", init, false);
+
+		function init() {
+			var key = document.getElementById("keyInput");
+			var val = document.getElementById("valueInput");
+
+			document.getElementById("btnSave").onclick = function () {
+				window.localStorage.removeItem(key.value);
+			}
+			document.getElementById("btnRemove").onclick = function () {
+				window.localStorage.removeItem(key.value);
+			}
+			document.getElementById("btnGet").onclick = function () {
+				alert(window.localStorage.getItem(key.value));
+			}
+			// body...
+		}
+		function displayEvent(e) {
+			var d = document.getElementById("output");
+			var message = "key: " + e.key + "<br />";
+			message += "newValue: " + e.newValue + "<br />";
+			message += "oldValue: " + e.newValue + "<br />";
+			message += "url :" + e.url + "<br />";
+			message += "storageArea: " + e.storageArea + "<br />";
+			d.innerHTML = message;
+		}
+	</script>
+</head>
+<body>
+	ключ <input id="keyInput">
+	значение <input id="valueInput" />
+	<br />
+	<button id="btnSave">сохранить</button>
+	<button id="btnGet">прочитать</button>
+	<button id="btnRemove"> удалить по ключу</button>
+	<div id="output">
+		
+	</div>
+</body>
+</html>
