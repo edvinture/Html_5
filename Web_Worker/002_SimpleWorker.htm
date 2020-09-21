@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Web Worker</title>
+	<script type="text/javascript">
+		var worker = new Worker ("task.js");
+
+		worker.addEventListener('message', function (e) {
+			document.getElemntById('output').innerHTML += 'ответ потока:' + e.data;
+
+			// body...
+		}, true);
+
+
+		worker.postMessage('hello world');
+	</script>
+</head>
+<body>
+	<div id="output"></div>
+	
+</body>
+</html>
