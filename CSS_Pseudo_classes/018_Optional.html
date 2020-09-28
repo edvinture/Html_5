@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<style>
+		
+		input[type=text]:optional {
+			border: 2px dashed grey;
+		}
+
+		input: required {
+			border:2px dashed red;
+		}
+	</style>
+</head>
+<body>
+	<form >
+		<p>пожалуйста, укажите ваше имя и возраст</p>
+		<p>
+			Имя:
+			<input type="text" name="name">
+		</p>
+		<p>
+			возраст:
+			<input type="number" min="18" required name="old" title="заполните ваш возраст">
+		</p>
+		<p>
+			<input type="submit" value="отправить">
+		</p>
+	</form>
+	
+</body>
+</html>

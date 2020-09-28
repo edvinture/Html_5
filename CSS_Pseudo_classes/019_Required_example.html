@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>optional</title>
+	<style>
+		p > label {
+			width: 100px;
+			float:left;
+			margin:3px 0px 0px 0px;
+		}
+
+		input:required + label:after {
+			content: " *";
+		}
+	</style>
+</head>
+<body>
+	<form >
+		<p>
+			
+			<input type="text" required="required">
+			<label >login</label>
+		</p>
+		<p>
+			<input type="text" required="required">
+			<label >Password</label>
+		</p>
+		<p>
+			<input type="text" required="required">
+			<label >Email</label>
+		</p>
+		<p>
+			<input type="text" required="required">
+			<label >Addres</label>
+
+		</p>
+		<p>
+			<input type="text" required="required">
+			<label >Country</label>
+		</p>
+	</form>
+	
+</body>
+</html>
