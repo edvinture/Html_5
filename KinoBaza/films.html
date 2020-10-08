@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Контакты</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>КиноБаза - Фильмы</title>
 	<meta name="description" content="КиноБаза - это портал о кино" />
 	<meta name="viewport" content="фильмы, фильмы онлайн, hd" />
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<!--  -->
+	
 	
 	<div class="main">
 		
-		<div class="header">
+		<header>
 			<div class="logo">
 				<div class="logo_text">
 					<h1><a href="index.html">КиноБаза</a></h1>
@@ -21,29 +22,29 @@
 				</div>
 			</div>
 
-			<!-- MENU -->
+			
 
-			<div class="menubar">
+			<nav>
 				
 				<ul class="menu">
 					<li><a href="index.html">Главная</a></li>
 					<li class="selected"><a href="films.html">Фильмы</a></li>
-					<li><a href="#">Сериалы</a></li>
+					<li><a href="serials.html">Сериалы</a></li>
 					<li><a href="rating.html">Рейтинг фильмов</a></li>
-					<li ><a href="contact.html">Контакты</a></li>
+					<li><a href="contact.html">Контакты</a></li>
 				</ul>
 
-			</div>
+			</nav>
 		
-		</div>
+		</header>
 
 		
 
 		<div class="site_content">
 			
-			<div class="sidebar_container">
+			<aside>
 				
-				
+			
 
 				<div class="sidebar">
 					<h2>Поиск</h2>
@@ -69,6 +70,8 @@
 					</form>
 				</div>
 
+				
+
 				<div class="sidebar">
 					<h2>Новости</h2>
 					<span>31.02.2018</span>
@@ -76,59 +79,64 @@
 					<a href="#">читать</a>
 				</div>
 
-				<!-- RATING -->
+				
 
 				<div class="sidebar">
 					<h2>Рейтинг фильмов</h2>
 					<ul>
 						<li><a href="show.html">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
 						<li><a href="show2.html">Матрица</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="show3.html">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="show3.html">Безумный Макс</a><span class="rating_sidebar">7.5</span></li>
 						<li><a href="show4.html">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
 
-			</div>
+			</aside>
 
-			<div class="content">
+			
+
+			<section>
+				
+
+				<div class="info_film">
+					<a href="show.html"><img src="img/inter.png"></a>
+					<p></p>
+					Когда засуха приводит человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету.
+					<div class="button"><a href="show.html">Смотреть</a></div>
+				</div>
+
+				<div class="info_film">
+					<a href="show3.html"><img src="img/max.png"></a>
+					Вскоре после отмщения за смерть жены и сына, Макс Рокатански покинул ряды «Основного силового патруля» и уехал в глушь, где скитается в одиночестве, пока мир медленно падает впоследствии нефтяного кризиса и глобальной войны. Не имея ничего, кроме своей машины «Перехватчик», Максу предстоит научиться, как выжить в пост-апокалиптической пустоши и сражаться с жестокими, безжалостными воинами, которые населяют её.
+					<div class="button"><a href="show3.html">Смотреть</a></div>
+				</div>
 				
 				<div class="info_film">
-					<img src="assets/img/inter.png">
-					Когда засуха приводит человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету
-					<div class="button"><a href="show.html">смотреть</a></div>
-				</div >
-
-				<div class="info_film">
-					<img src="assets/img/max.png">
-					Вскоре после отмщения за смерть жены и сына, Макс Рокатански покинул ряды «Основного силового патруля» и уехал в глушь, где скитается в одиночестве, пока мир медленно падает впоследствии нефтяного кризиса и глобальной войны. Не имея ничего, кроме своей машины «Перехватчик», Максу предстоит научиться, как выжить в пост-апокалиптической пустоши и сражаться с жестокими, безжалостными воинами, которые населяют её.
-					<div class="button"><a href="show3.html">смотреть</a></div>
-				</div >
-
-				<div class="info_film">
-					<img src="assets/img/matrix.png">
+					<a href="show2.html"><img src="img/matrix.png"></a>
 					Мир Матрицы — это иллюзия, существующая только в бесконечном сне обреченного человечества. Холодный мир будущего, в котором люди — всего лишь батарейки в компьютерных системах.
-					<div class="button"><a href="show2.html">смотреть</a></div>
-				</div >
-
+					<div class="button"><a href="show2.html">Смотреть</a></div>
+				</div>
+				
 				<div class="info_film">
-					<img src="assets/img/cloud.png">
+					<a href="show4.html"><img src="img/cloud.png"></a>
 					Шесть историй — пять реинкарнаций, происходящих в разное время, тесно переплетаются между собой…
-					<div class="button"><a href="show4.html">смотреть</a></div>
-				</div >
+					<div class="button"><a href="show4.html">Смотреть</a></div>
+				</div>
 
-			</div>
+			</section>
 
 		</div>
-	<div class="footer">
+
+	<footer>
 		<p>
-			<a href="index.html">Главная</a> |
-			<a href="films.html">Фильмы</a> |
-			<a href="#">Сериалы</a> |
-			<a href="rating.html">Рейтинг фильмов</a> |
-			<a href="contact.html">Контакты</a>  
+			<a href="index.html">Главная</a>
+			<a href="films.html">Фильмы</a>
+			<a href="serials.html">Сериалы</a>
+			<a href="rating.html">Рейтинг</a>
+			<a href="contact.html">Контакты</a>
 		</p>
 		<p>kinopoisk.ru</p>
-	</div>
+	</footer>
 
 	</div>
 

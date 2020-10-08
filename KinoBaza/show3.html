@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Контакты</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>КиноБаза - Безумный Макс</title>
 	<meta name="description" content="КиноБаза - это портал о кино" />
 	<meta name="viewport" content="фильмы, фильмы онлайн, hd" />
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<!--  -->
+	
 	
 	<div class="main">
 		
-		<div class="header">
+		<header>
 			<div class="logo">
 				<div class="logo_text">
 					<h1><a href="index.html">КиноБаза</a></h1>
@@ -21,27 +22,27 @@
 				</div>
 			</div>
 
-			<!-- MENU -->
+			
 
-			<div class="menubar">
+			<nav>
 				
 				<ul class="menu">
 					<li><a href="index.html">Главная</a></li>
 					<li class="selected"><a href="films.html">Фильмы</a></li>
-					<li><a href="#">Сериалы</a></li>
-					<li ><a href="rating.html">Рейтинг фильмов</a></li>
-					<li ><a href="contact.html">Контакты</a></li>
+					<li><a href="serials.html">Сериалы</a></li>
+					<li><a href="rating.html">Рейтинг фильмов</a></li>
+					<li><a href="contact.html">Контакты</a></li>
 				</ul>
 
-			</div>
+			</nav>
 		
-		</div>
+		</header>
 
 		
 
 		<div class="site_content">
 			
-			<div class="sidebar_container">
+			<aside>
 				
 				
 
@@ -53,7 +54,7 @@
 					</form>
 				</div>
 
-				
+			
 
 				<div class="sidebar">
 					<h2>Вход</h2>
@@ -69,6 +70,8 @@
 					</form>
 				</div>
 
+				
+
 				<div class="sidebar">
 					<h2>Новости</h2>
 					<span>31.02.2018</span>
@@ -76,78 +79,83 @@
 					<a href="#">читать</a>
 				</div>
 
-				<!-- RATING -->
+				
 
 				<div class="sidebar">
 					<h2>Рейтинг фильмов</h2>
 					<ul>
-						<li><a href="#">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
-						<li><a href="">Матрица</a><span class="rating_sidebar">8.0</span></li>
-						<li><a href="show3.html">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
-						<li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
+						<li><a href="show.html">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
+						<li><a href="show2.html">Матрица</a><span class="rating_sidebar">8.0</span></li>
+						<li><a href="show3.html">Безумный Макс</a><span class="rating_sidebar">7.5</span></li>
+						<li><a href="show4.html">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
 					</ul>
 				</div>
 
-			</div>
+			</aside>
 
-			<div class="content">
-				<h1>безумный Макс</h1>
+			<section>
+				
+				<h1>Безумный Макс</h1>
 
-				<iframe  width="560" height="315" src="https://www.youtube.com/embed/an_MiUmpgs0" frameborder="0" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/an_MiUmpgs0" frameborder="0" allowfullscreen></iframe>
+
 				<div class="info_film_page">
-					<span class="label">рейтинг:</span><span class="value">7.5 / 10</span>
-					<span class="label">год:</span><span class="value">2015</span>
-					<span class="label">режиссер:</span><span class="value">Джордж Миллер</span>
+					<span class="label">Рейтинг: </span><span class="value">7.5 / 10</span>
+					<span class="label">Год: </span><span class="value">2015</span>
+					<span class="label">Режиссёр: </span><span class="value">Джордж Миллер</span>
 				</div>
 				<hr>
-				<h2>описание безумный Макс</h2>
-				<div class="description_film">
-					<img src="assets/img/max.png">
+				<h2>Описание Безумный Макс</h2>
+				<div class="descriptions_film">
+					<img src="img/max.png">
 					Вскоре после отмщения за смерть жены и сына, Макс Рокатански покинул ряды «Основного силового патруля» и уехал в глушь, где скитается в одиночестве, пока мир медленно падает впоследствии нефтяного кризиса и глобальной войны. Не имея ничего, кроме своей машины «Перехватчик», Максу предстоит научиться, как выжить в пост-апокалиптической пустоши и сражаться с жестокими, безжалостными воинами, которые населяют её.
 				</div>
 
 
 				<hr>
-				<h2>Отзывы об фильме Безумный макс</h2>
+				<h2>Отзывы о Безумный Макс</h2>
 
-				<div class="reviews">
+				<article>
 					<div class="review_name">
-						Артур
+						Сергей
 					</div>
 					<div class="review_text">
-						крутой фильм
+						Отличный фильм, время пролетело не заметно.
 					</div>
+				</article>
 
-				</div>
+				<article>
+					<div class="review_name">
+						Дмитрий
+					</div>
+					<div class="review_text">
+						Я с нетерпением ждал работ от Джорджа Миллера. Безумный Макс меня впечатлил.
+					</div>
+				</article>
 
-				<div class="reviews">
-					<div class="review_name"></div>
-					Екатерина 
-				</div>
-				<div class="review_text">
-					безумный фильм!
-				</div>
-			</div>
+				<article>
+					<form method="post" action="#" id="review">
+						<input type="text" name="review_name" placeholder="ваше имя">
+						<textarea name="review_text"></textarea>
+						<input class="btn" type="submit" value="отправить">
+					</form>
+				</article>
 
-			<div class="send">
-				<form method="post" action="#" id="review">
-					<input type="text" name="review_name" placeholder="ваше имя">
-					<textarea name="review_text"></textarea>
-					<input type="btn" type="submit" value="отправить">
-				</form>
-			</div>
+			</section>
 
 		</div>
-	<div class="footer">
+
+
+	<footer>
 		<p>
-			<a href="index.html">Главная</a> |
-			<a href="films.html">Фильмы</a> |
-			<a href="#">Сериалы</a> |
-			<a href="rating.html">Рейтинг фильмов</a> |
-			<a href="contact.html">Контакты</a>  
+			<a href="index.html">Главная</a>
+			<a href="films.html">Фильмы</a>
+			<a href="serials.html">Сериалы</a>
+			<a href="rating.html">Рейтинг</a>
+			<a href="contact.html">Контакты</a>
 		</p>
 		<p>kinopoisk.ru</p>
-	</div>
+	</footer>
 
 	</div>
 
